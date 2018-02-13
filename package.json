@@ -1,0 +1,14 @@
+{
+  "name": "actionjs",
+  "version": "1.0.0",
+  "description": "Return action object for botmatic integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@botmatic/js-integration": "^0.4.0"
+  }
+}
