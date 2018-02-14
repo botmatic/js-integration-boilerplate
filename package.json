@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@botmatic/js-integration": "*"
+    "@botmatic/js-integration": "git@github.com:botmatic/js-integration.git#debug"
   }
 }
