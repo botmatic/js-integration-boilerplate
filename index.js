@@ -4,5 +4,3 @@ const botmatic = require('@botmatic/js-integration')()
 botmatic.onAction(".*", ({client, data}) => {
   return Promise.resolve({data: {action: data.action, type:"action"}});
 })
-
-module.exports = botmatic
