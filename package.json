@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@botmatic/js-integration": "^0.4.0"
+    "@botmatic/js-integration": "*"
   }
 }
