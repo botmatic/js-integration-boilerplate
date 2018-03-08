@@ -1,3 +1,1 @@
-Execute js action through Botmatic web messenger.
-
-For all received actions, return {data: {action: data.action, type:"action"}}
+Boilerplate to create a Botmatic integration with NodeJS.
