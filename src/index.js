@@ -5,11 +5,11 @@ const path = require('path')
 // Used for integration settings page.
 const fs = require('fs');
 const Mustache = require('mustache')
-const tplFieldsBuf = fs.readFileSync(__dirname + '/views/fields.html');
+const tplFieldsBuf = fs.readFileSync(__dirname + '/../views/fields.html');
 const tplFieldsStr = tplFieldsBuf.toString('utf8')
 
 require('dotenv').config({
-  path: path.join(__dirname, '.env')
+  path: path.join(__dirname, '/../.env')
 })
 
 const botmatic = require('@botmatic/js-integration')({

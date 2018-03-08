@@ -4,7 +4,11 @@
   "description": "Return action object for botmatic integration",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node src/index.js",
+    "forever_restart": "npm run forever_stop ; npm run forever_start",
+    "forever_start": "forever start -a  --uid \"$(basename \"$PWD\")\" src/index.js",
+    "forever_stop": "forever stop \"$(basename \"$PWD\")\"",
+    "forever_list": "forever list",
     "deploy": "now-pipeline --alias js-integration-boilerplate.now.sh"
   },
   "author": "",
@@ -17,7 +21,7 @@
     "mustache": "^2.3.0"
   },
   "now": {
-    "alias": "tutu.now.sh",
+    "alias": "js-integration-boilerplate.now.sh",
     "dotenv": true
   }
 }
