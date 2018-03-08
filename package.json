@@ -1,5 +1,5 @@
 {
-  "name": "actionjs",
+  "name": "@botmatic/actionjs",
   "version": "1.0.0",
   "description": "Return action object for botmatic integration",
   "main": "index.js",
