@@ -1,12 +1,12 @@
 const botmatic = require('@botmatic/js-integration')({port: 5050})
 
-console.log(porocess.env)
+console.log(process.env)
 
 require('dotenv').config({
   path: path.join(__dirname, '/../.env')
 })
 
-console.log(porocess.env)
+console.log(process.env)
 
 botmatic.onAction(".*", ({client, data}) => {
   console.log('RECEIVE ACTION')
