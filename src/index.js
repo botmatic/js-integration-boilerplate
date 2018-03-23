@@ -1,19 +1,15 @@
 const botmatic = require('@botmatic/js-integration')({port: 5050})
-console.log(process.env)
+const request = require('request')
 
 require('dotenv').config({
   path: require('path').join(__dirname, '/../.env')
 })
 
-console.log(process.env)
-
 botmatic.onAction(".*", ({client, data}) => {
   console.log('RECEIVE ACTION')
   console.log(data)
   console.log(data.data.contact_id)
-  // return new Promise((resolve, reject) => {
-    return updateBotmaticContactProperties(data.data.contact_id, data.action)
-  // })
+  return updateBotmaticContactProperties(data.data.contact_id, data.action)
 })
 
 const updateBotmaticContactProperties = (contact_id, action) => {
