@@ -1,5 +1,5 @@
 {
-  "name": "@botmatic/js-integration-boilerplate",
+  "name": "@botmatic/js-integration-setproperties",
   "version": "1.0.0",
   "description": "Return action object for botmatic integration",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "forever_start": "forever start -a  --uid \"$(basename \"$PWD\")\" src/index.js",
     "forever_stop": "forever stop \"$(basename \"$PWD\")\"",
     "forever_list": "forever list",
-    "deploy": "now-pipeline --alias js-integration-boilerplate.now.sh"
+    "deploy": "now-pipeline --alias js-integration-setproperties.now.sh"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +21,7 @@
     "mustache": "^2.3.0"
   },
   "now": {
-    "alias": "js-integration-boilerplate.now.sh",
+    "alias": "js-integration-setproperties.now.sh",
     "dotenv": true
   }
 }
