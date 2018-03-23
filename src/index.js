@@ -1,9 +1,8 @@
 const botmatic = require('@botmatic/js-integration')({port: 5050})
-
 console.log(process.env)
 
 require('dotenv').config({
-  path: path.join(__dirname, '/../.env')
+  path: require('path').join(__dirname, '/../.env')
 })
 
 console.log(process.env)
