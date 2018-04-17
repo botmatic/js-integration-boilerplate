@@ -11,7 +11,7 @@ const tplFieldsStr = tplFieldsBuf.toString('utf8')
 // Import .env
 // Don't forget to create .env file at root.
 require('dotenv').config({
-  path: path.join(__dirname, '/../.env')
+  path: process.env.DEV ? path.join(__dirname, '/../.env-dev') : path.join(__dirname, '/.env')
 })
 
 // Construct botmatic client.
@@ -54,8 +54,12 @@ botmatic.onSettingsPage("/settingspath", (token) => {
     // The second parameter is an object with:
     // - name: name value of html input tag.
     // - value: value when form is in modification.
-    let tpl = Mustache.render(tplFieldsStr, {name: "api_key", value: myObject.api_key});
-    resolve(tpl)
+    dataManager_module.get("my_integration:"+auth.token)
+      .then((res) => {
+        let tpl = Mustache.render(tplFieldsStr, {name: "api_key", value: res});
+        resolve(tpl)
+      })
+      .catch((e) => reject(e))
   })
 })
 
@@ -70,6 +74,7 @@ botmatic.onUpdateSettings('/settingspath', function(token, data) {
     // Check if API key is given.
     if (data.api_key) {
       // Store value somewhere.
+      dataManager_module.set("my_integration:"+token, data.api_key)
       resolve({success: true})
     } else {
       console.error('ERROR:', "API key is required.");

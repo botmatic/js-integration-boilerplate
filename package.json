@@ -6,10 +6,11 @@
   "scripts": {
     "start": "node src/index.js",
     "forever_restart": "npm run forever_stop ; npm run forever_start",
-    "forever_start": "forever start -a  --uid \"$(basename \"$PWD\")\" src/index.js",
+    "forever_start": "forever start -a --uid \"$(basename \"$PWD\")\" src/index.js",
     "forever_stop": "forever stop \"$(basename \"$PWD\")\"",
     "forever_list": "forever list",
-    "deploy": "now-pipeline --alias js-integration-boilerplate.now.sh"
+    "deploy": "now-pipeline --alias js-integration-boilerplate.now.sh",
+    "dev": "BOTMATIC_BASE_URL=http://sub3.botmatic.test:4000/ DEBUG=botma* DEV=true npm start"
   },
   "author": "",
   "license": "ISC",
